@@ -1,315 +1,1163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AutoFusion | Drive Your Dreams — Quality Cars in Kenya</title>
-  <meta name="description" content="AutoFusion is a trusted Kenyan car dealership. Quality inspected vehicles, honest pricing, and full support from enquiry to keys-in-hand." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230a0a0c'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='bold' text-anchor='middle' fill='%23e3b04b'%3EAF%3C/text%3E%3C/svg%3E" />
+  <meta name="description"
+    content="AutoFusion is a trusted Kenyan car dealership. Quality inspected vehicles, honest pricing, and full support from enquiry to keys-in-hand." />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230a0a0c'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='bold' text-anchor='middle' fill='%23e3b04b'%3EAF%3C/text%3E%3C/svg%3E" />
   <script>document.documentElement.classList.add('js')</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
   <style>
     /* ============ EDIT COLOURS HERE ============ */
-    :root{
-      --bg:#0a0a0c;
-      --bg-alt:#0e0e12;
-      --panel:#141419;
-      --line:rgba(255,255,255,.08);
-      --text:#ecebe7;
-      --muted:#a8a49e;
-      --gold:#e3b04b;
-      --gold-grad:linear-gradient(135deg,#f9e39b 0%,#e3b04b 48%,#b07f13 100%);
-      --silver-grad:linear-gradient(180deg,#ffffff 0%,#e6e6ea 45%,#8f8f96 100%);
-      --radius:18px;
-      --nav-h:72px;
+    :root {
+      --bg: #0a0a0c;
+      --bg-alt: #0e0e12;
+      --panel: #141419;
+      --line: rgba(255, 255, 255, .08);
+      --text: #ecebe7;
+      --muted: #a8a49e;
+      --gold: #e3b04b;
+      --gold-grad: linear-gradient(135deg, #f9e39b 0%, #e3b04b 48%, #b07f13 100%);
+      --silver-grad: linear-gradient(180deg, #ffffff 0%, #e6e6ea 45%, #8f8f96 100%);
+      --radius: 18px;
+      --nav-h: 72px;
     }
 
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:86px}
-    body{
-      font-family:'Montserrat',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.65;
-      overflow-x:hidden;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
     }
-    ::selection{background:rgba(227,176,75,.35)}
-    a{color:inherit;text-decoration:none}
-    ul{list-style:none}
-    section{position:relative}
-    ::-webkit-scrollbar{width:10px}
-    ::-webkit-scrollbar-track{background:#0a0a0c}
-    ::-webkit-scrollbar-thumb{background:#2a2a30;border-radius:99px}
-    ::-webkit-scrollbar-thumb:hover{background:#3a3a42}
 
-    .container{width:min(1140px,92%);margin-inline:auto}
-    .section{padding:clamp(64px,9vw,110px) 0}
-    .alt{background:var(--bg-alt);border-block:1px solid var(--line)}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 86px
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: rgba(227, 176, 75, .35)
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    ul {
+      list-style: none
+    }
+
+    section {
+      position: relative
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a0c
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #2a2a30;
+      border-radius: 99px
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3a3a42
+    }
+
+    .container {
+      width: min(1140px, 92%);
+      margin-inline: auto
+    }
+
+    .section {
+      padding: clamp(64px, 9vw, 110px) 0
+    }
+
+    .alt {
+      background: var(--bg-alt);
+      border-block: 1px solid var(--line)
+    }
 
     /* ---------- Text effects ---------- */
-    .gold-text{
-      background:var(--gold-grad);
-      -webkit-background-clip:text;background-clip:text;
-      color:transparent;
-    }
-    .silver-text{
-      background:var(--silver-grad);
-      -webkit-background-clip:text;background-clip:text;
-      color:transparent;
+    .gold-text {
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    .eyebrow{
-      display:inline-block;
-      font-size:.72rem;font-weight:700;
-      letter-spacing:.35em;text-transform:uppercase;
-      color:var(--gold);
-      margin-bottom:14px;
+    .silver-text {
+      background: var(--silver-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    .sec-head{max-width:640px;margin-bottom:clamp(36px,5vw,56px)}
-    .sec-head h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;line-height:1.2}
-    .sec-head p{color:var(--muted);margin-top:12px}
-    .sec-head.center{margin-inline:auto;text-align:center}
-    .sec-head.center .tagline{justify-content:center}
+
+    .eyebrow {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .sec-head {
+      max-width: 640px;
+      margin-bottom: clamp(36px, 5vw, 56px)
+    }
+
+    .sec-head h2 {
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.2
+    }
+
+    .sec-head p {
+      color: var(--muted);
+      margin-top: 12px
+    }
+
+    .sec-head.center {
+      margin-inline: auto;
+      text-align: center
+    }
+
+    .sec-head.center .tagline {
+      justify-content: center
+    }
 
     /* tagline dashes (mirrors the logo) */
-    .tagline{display:flex;align-items:center;gap:14px;font-size:.78rem;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-top:14px}
-    .tline{height:2px;width:58px;background:linear-gradient(90deg,transparent,var(--gold));border-radius:2px}
-    .tline.r{background:linear-gradient(90deg,var(--gold),transparent)}
+    .tagline {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .42em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 14px
+    }
+
+    .tline {
+      height: 2px;
+      width: 58px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+      border-radius: 2px
+    }
+
+    .tline.r {
+      background: linear-gradient(90deg, var(--gold), transparent)
+    }
 
     /* ---------- Buttons ---------- */
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:.85rem 1.7rem;border-radius:999px;
-      font-weight:700;font-size:.92rem;letter-spacing:.02em;
-      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, filter .25s ease;
-      cursor:pointer;border:1px solid transparent;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: .85rem 1.7rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .92rem;
+      letter-spacing: .02em;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, filter .25s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
     }
-    .btn svg{width:18px;height:18px;flex:none}
-    .btn-gold{background:var(--gold-grad);color:#171004;box-shadow:0 10px 28px rgba(227,176,75,.22)}
-    .btn-gold:hover{transform:translateY(-2px);filter:brightness(1.07);box-shadow:0 14px 34px rgba(227,176,75,.32)}
-    .btn-ghost{border-color:var(--line);color:var(--text)}
-    .btn-ghost:hover{border-color:var(--gold);transform:translateY(-2px)}
-    .btn-sm{padding:.55rem 1.15rem;font-size:.82rem}
-    :is(a,button):focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex: none
+    }
+
+    .btn-gold {
+      background: var(--gold-grad);
+      color: #171004;
+      box-shadow: 0 10px 28px rgba(227, 176, 75, .22)
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.07);
+      box-shadow: 0 14px 34px rgba(227, 176, 75, .32)
+    }
+
+    .btn-ghost {
+      border-color: var(--line);
+      color: var(--text)
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px)
+    }
+
+    .btn-sm {
+      padding: .55rem 1.15rem;
+      font-size: .82rem
+    }
+
+    :is(a, button):focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 6px
+    }
 
     /* ---------- Nav ---------- */
-    .nav{
-      position:fixed;inset:0 0 auto 0;z-index:100;
-      height:var(--nav-h);
-      transition:background .3s ease,border-color .3s ease;
-      border-bottom:1px solid transparent;
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      height: var(--nav-h);
+      transition: background .3s ease, border-color .3s ease;
+      border-bottom: 1px solid transparent;
     }
-    .nav.scrolled{background:rgba(10,10,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
-    .nav-inner{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{font-size:1.28rem;font-weight:800;letter-spacing:.06em;white-space:nowrap}
-    .nav-links{display:flex;align-items:center;gap:26px}
-    .nav-links a{font-size:.88rem;font-weight:600;color:var(--muted);transition:color .25s ease;position:relative;padding:4px 0}
-    .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold-grad);border-radius:2px;transition:width .3s ease}
-    .nav-links a:not(.btn):hover,.nav-links a.active{color:var(--text)}
-    .nav-links a:not(.btn):hover::after,.nav-links a.active::after{width:100%}
-    .nav-cta{margin-left:6px}
 
-    .nav-toggle{display:none;background:none;border:0;cursor:pointer;width:40px;height:40px;position:relative;z-index:110}
-    .nav-toggle span{display:block;width:24px;height:2px;background:var(--text);margin:5px auto;border-radius:2px;transition:.3s ease}
-    .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .nav-toggle.open span:nth-child(2){opacity:0}
-    .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav.scrolled {
+      background: rgba(10, 10, 12, .82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-color: var(--line)
+    }
 
-    @media (max-width:860px){
-      .nav-toggle{display:block}
-      .nav-links{
-        position:fixed;top:var(--nav-h);left:0;right:0;
-        flex-direction:column;align-items:stretch;gap:0;
-        background:rgba(12,12,15,.97);backdrop-filter:blur(16px);
-        border-bottom:1px solid var(--line);
-        padding:10px 6vw 26px;
-        transform:translateY(-8px);opacity:0;pointer-events:none;
-        transition:.3s ease;
+    .nav-inner {
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    .brand {
+      font-size: 1.28rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      white-space: nowrap
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px
+    }
+
+    .nav-links a {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--muted);
+      transition: color .25s ease;
+      position: relative;
+      padding: 4px 0
+    }
+
+    .nav-links a:not(.btn)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: var(--gold-grad);
+      border-radius: 2px;
+      transition: width .3s ease
+    }
+
+    .nav-links a:not(.btn):hover,
+    .nav-links a.active {
+      color: var(--text)
+    }
+
+    .nav-links a:not(.btn):hover::after,
+    .nav-links a.active::after {
+      width: 100%
+    }
+
+    .nav-cta {
+      margin-left: 6px
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      z-index: 110
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      margin: 5px auto;
+      border-radius: 2px;
+      transition: .3s ease
+    }
+
+    .nav-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    .nav-toggle.open span:nth-child(2) {
+      opacity: 0
+    }
+
+    .nav-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
+    @media (max-width:860px) {
+      .nav-toggle {
+        display: block
       }
-      .nav-links.open{transform:none;opacity:1;pointer-events:auto}
-      .nav-links a{padding:14px 4px;font-size:1rem;border-bottom:1px solid rgba(255,255,255,.05)}
-      .nav-links a:not(.btn)::after{display:none}
-      .nav-cta{margin:18px 0 0;justify-content:center}
-      body.menu-open{overflow:hidden}
+
+      .nav-links {
+        position: fixed;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(12, 12, 15, .97);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--line);
+        padding: 10px 6vw 26px;
+        transform: translateY(-8px);
+        opacity: 0;
+        pointer-events: none;
+        transition: .3s ease;
+      }
+
+      .nav-links.open {
+        transform: none;
+        opacity: 1;
+        pointer-events: auto
+      }
+
+      .nav-links a {
+        padding: 14px 4px;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, .05)
+      }
+
+      .nav-links a:not(.btn)::after {
+        display: none
+      }
+
+      .nav-cta {
+        margin: 18px 0 0;
+        justify-content: center
+      }
+
+      body.menu-open {
+        overflow: hidden
+      }
     }
 
     /* ---------- Hero ---------- */
-    .hero{
-      min-height:100svh;display:flex;align-items:center;
-      padding:calc(var(--nav-h) + 40px) 0 60px;
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: calc(var(--nav-h) + 40px) 0 60px;
       background:
-        radial-gradient(900px 480px at 78% 8%, rgba(227,176,75,.13), transparent 65%),
-        radial-gradient(700px 420px at 8% 90%, rgba(255,255,255,.05), transparent 60%),
+        radial-gradient(900px 480px at 78% 8%, rgba(227, 176, 75, .13), transparent 65%),
+        radial-gradient(700px 420px at 8% 90%, rgba(255, 255, 255, .05), transparent 60%),
         var(--bg);
-      overflow:hidden;
+      overflow: hidden;
     }
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
-    .hero h1{
-      font-size:clamp(2.5rem,7.2vw,4.9rem);
-      font-weight:800;letter-spacing:.05em;line-height:1.04;
-      margin-top:18px;
-    }
-    .hero p.lead{color:var(--muted);font-size:clamp(.98rem,1.6vw,1.08rem);max-width:520px;margin:26px 0 34px}
-    .hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
 
-    .stats{display:flex;gap:0;margin-top:52px;border-top:1px solid var(--line);max-width:520px}
-    .stat{flex:1;padding:20px 8px 0}
-    .stat + .stat{border-left:1px solid var(--line);padding-left:22px}
-    .stat-num{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800}
-    .stat-label{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 40px;
+      align-items: center
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 7.2vw, 4.9rem);
+      font-weight: 800;
+      letter-spacing: .05em;
+      line-height: 1.04;
+      margin-top: 18px;
+    }
+
+    .hero p.lead {
+      color: var(--muted);
+      font-size: clamp(.98rem, 1.6vw, 1.08rem);
+      max-width: 520px;
+      margin: 26px 0 34px
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px
+    }
+
+    .stats {
+      display: flex;
+      gap: 0;
+      margin-top: 52px;
+      border-top: 1px solid var(--line);
+      max-width: 520px
+    }
+
+    .stat {
+      flex: 1;
+      padding: 20px 8px 0
+    }
+
+    .stat+.stat {
+      border-left: 1px solid var(--line);
+      padding-left: 22px
+    }
+
+    .stat-num {
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 800
+    }
+
+    .stat-label {
+      font-size: .74rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 2px
+    }
 
     /* hero art */
-    .hero-art{position:relative;min-height:320px}
-    .art-glow{position:absolute;inset:12% 4%;background:radial-gradient(closest-side,rgba(227,176,75,.22),transparent 70%);border-radius:50%}
-    .art-back{position:absolute;top:6%;left:-4%;width:78%;color:#cfcfd6;opacity:.22;transform:scaleX(-1)}
-    .art-car{position:relative;width:100%;color:var(--gold);filter:drop-shadow(0 24px 44px rgba(227,176,75,.18));animation:float 6s ease-in-out infinite}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    .hero-art {
+      position: relative;
+      min-height: 320px
+    }
 
-    @media (max-width:860px){
-      .hero-grid{grid-template-columns:1fr}
-      .hero-art{order:2;min-height:0;margin-top:10px}
-      .stats{max-width:none}
+    .art-glow {
+      position: absolute;
+      inset: 12% 4%;
+      background: radial-gradient(closest-side, rgba(227, 176, 75, .22), transparent 70%);
+      border-radius: 50%
+    }
+
+    .art-back {
+      position: absolute;
+      top: 6%;
+      left: -4%;
+      width: 78%;
+      color: #cfcfd6;
+      opacity: .22;
+      transform: scaleX(-1)
+    }
+
+    .art-car {
+      position: relative;
+      width: 100%;
+      color: var(--gold);
+      filter: drop-shadow(0 24px 44px rgba(227, 176, 75, .18));
+      animation: float 6s ease-in-out infinite
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-12px)
+      }
+    }
+
+    @media (max-width:860px) {
+      .hero-grid {
+        grid-template-columns: 1fr
+      }
+
+      .hero-art {
+        order: 2;
+        min-height: 0;
+        margin-top: 10px
+      }
+
+      .stats {
+        max-width: none
+      }
     }
 
     /* ---------- Marquee ---------- */
-    .marquee{overflow:hidden;border-block:1px solid var(--line);padding:20px 0;background:#0c0c0f;
-      -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
-      mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);}
-    .marquee-track{display:flex;gap:56px;width:max-content;animation:scrollX 30s linear infinite}
-    .marquee:hover .marquee-track{animation-play-state:paused}
-    .marquee span{font-weight:700;letter-spacing:.28em;text-transform:uppercase;font-size:.85rem;color:#6f6d6a;white-space:nowrap}
-    .marquee b{color:var(--gold);font-weight:700}
-    @keyframes scrollX{to{transform:translateX(-50%)}}
+    .marquee {
+      overflow: hidden;
+      border-block: 1px solid var(--line);
+      padding: 20px 0;
+      background: #0c0c0f;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 56px;
+      width: max-content;
+      animation: scrollX 30s linear infinite
+    }
+
+    .marquee:hover .marquee-track {
+      animation-play-state: paused
+    }
+
+    .marquee span {
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      font-size: .85rem;
+      color: #6f6d6a;
+      white-space: nowrap
+    }
+
+    .marquee b {
+      color: var(--gold);
+      font-weight: 700
+    }
+
+    @keyframes scrollX {
+      to {
+        transform: translateX(-50%)
+      }
+    }
 
     /* ---------- About ---------- */
-    .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,64px);align-items:start}
-    .about-copy p{color:var(--muted);margin-bottom:16px}
-    .tick-list{margin-top:22px;display:grid;gap:12px}
-    .tick-list li{display:flex;gap:12px;align-items:flex-start;font-weight:600;font-size:.95rem}
-    .tick-list svg{width:20px;height:20px;flex:none;color:var(--gold);margin-top:3px}
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: clamp(36px, 5vw, 64px);
+      align-items: start
+    }
 
-    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .why-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:transform .3s ease,border-color .3s ease}
-    .why-card:hover{transform:translateY(-4px);border-color:rgba(227,176,75,.45)}
-    .why-card svg{width:26px;height:26px;color:var(--gold);margin-bottom:14px}
-    .why-card h3{font-size:.98rem;font-weight:700;margin-bottom:6px}
-    .why-card p{font-size:.84rem;color:var(--muted)}
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 16px
+    }
 
-    @media (max-width:860px){.about-grid{grid-template-columns:1fr}}
+    .tick-list {
+      margin-top: 22px;
+      display: grid;
+      gap: 12px
+    }
+
+    .tick-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-weight: 600;
+      font-size: .95rem
+    }
+
+    .tick-list svg {
+      width: 20px;
+      height: 20px;
+      flex: none;
+      color: var(--gold);
+      margin-top: 3px
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    .why-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: transform .3s ease, border-color .3s ease
+    }
+
+    .why-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(227, 176, 75, .45)
+    }
+
+    .why-card svg {
+      width: 26px;
+      height: 26px;
+      color: var(--gold);
+      margin-bottom: 14px
+    }
+
+    .why-card h3 {
+      font-size: .98rem;
+      font-weight: 700;
+      margin-bottom: 6px
+    }
+
+    .why-card p {
+      font-size: .84rem;
+      color: var(--muted)
+    }
+
+    @media (max-width:860px) {
+      .about-grid {
+        grid-template-columns: 1fr
+      }
+    }
 
     /* ---------- Stock / categories ---------- */
-    .cars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .car-card{
-      background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
-      overflow:hidden;display:flex;flex-direction:column;
-      transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+    .cars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px
     }
-    .car-card:hover{transform:translateY(-6px);border-color:rgba(227,176,75,.5);box-shadow:0 20px 44px rgba(0,0,0,.45)}
-    .car-art{padding:26px 22px 8px;background:radial-gradient(120% 90% at 50% 0%,rgba(227,176,75,.09),transparent 70%)}
-    .car-art svg{width:100%;height:auto;display:block}
-    .art-gold{color:var(--gold);filter:drop-shadow(0 10px 22px rgba(227,176,75,.18))}
-    .art-silver{color:#d9d9de;filter:drop-shadow(0 10px 22px rgba(255,255,255,.08))}
-    .card-body{padding:18px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
-    .card-body h3{font-size:1.02rem;font-weight:700}
-    .card-body p{font-size:.85rem;color:var(--muted);flex:1}
-    .card-link{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:700;color:var(--gold);margin-top:8px;transition:gap .25s ease}
-    .card-link:hover{gap:12px}
-    .card-link svg{width:16px;height:16px}
-    .stock-note{text-align:center;color:var(--muted);font-size:.88rem;margin-top:34px}
-    .stock-note a{color:var(--gold);font-weight:700}
-    @media (max-width:1000px){.cars-grid{grid-template-columns:1fr 1fr}}
-    @media (max-width:540px){.cars-grid{grid-template-columns:1fr}}
+
+    .car-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .car-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(227, 176, 75, .5);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, .45)
+    }
+
+    .car-art {
+      padding: 26px 22px 8px;
+      background: radial-gradient(120% 90% at 50% 0%, rgba(227, 176, 75, .09), transparent 70%)
+    }
+
+    .car-art svg {
+      width: 100%;
+      height: auto;
+      display: block
+    }
+
+    .art-gold {
+      color: var(--gold);
+      filter: drop-shadow(0 10px 22px rgba(227, 176, 75, .18))
+    }
+
+    .art-silver {
+      color: #d9d9de;
+      filter: drop-shadow(0 10px 22px rgba(255, 255, 255, .08))
+    }
+
+    .card-body {
+      padding: 18px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1
+    }
+
+    .card-body h3 {
+      font-size: 1.02rem;
+      font-weight: 700
+    }
+
+    .card-body p {
+      font-size: .85rem;
+      color: var(--muted);
+      flex: 1
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-top: 8px;
+      transition: gap .25s ease
+    }
+
+    .card-link:hover {
+      gap: 12px
+    }
+
+    .card-link svg {
+      width: 16px;
+      height: 16px
+    }
+
+    .stock-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: .88rem;
+      margin-top: 34px
+    }
+
+    .stock-note a {
+      color: var(--gold);
+      font-weight: 700
+    }
+
+    @media (max-width:1000px) {
+      .cars-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media (max-width:540px) {
+      .cars-grid {
+        grid-template-columns: 1fr
+      }
+    }
 
     /* ---------- Process ---------- */
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .step{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;position:relative;transition:transform .3s ease,border-color .3s ease}
-    .step:hover{transform:translateY(-4px);border-color:rgba(227,176,75,.45)}
-    .step-num{font-size:2.6rem;font-weight:800;letter-spacing:.02em;opacity:.9}
-    .step h3{font-size:1.05rem;font-weight:700;margin:10px 0 8px}
-    .step p{font-size:.88rem;color:var(--muted)}
-    .step::after{content:"→";position:absolute;right:-16px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.2rem;opacity:.6}
-    .step:last-child::after{display:none}
-    @media (max-width:860px){.steps{grid-template-columns:1fr}.step::after{display:none}}
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px
+    }
+
+    .step {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      position: relative;
+      transition: transform .3s ease, border-color .3s ease
+    }
+
+    .step:hover {
+      transform: translateY(-4px);
+      border-color: rgba(227, 176, 75, .45)
+    }
+
+    .step-num {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+      opacity: .9
+    }
+
+    .step h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 10px 0 8px
+    }
+
+    .step p {
+      font-size: .88rem;
+      color: var(--muted)
+    }
+
+    .step::after {
+      content: "→";
+      position: absolute;
+      right: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 1.2rem;
+      opacity: .6
+    }
+
+    .step:last-child::after {
+      display: none
+    }
+
+    @media (max-width:860px) {
+      .steps {
+        grid-template-columns: 1fr
+      }
+
+      .step::after {
+        display: none
+      }
+    }
 
     /* ---------- Contact ---------- */
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,56px);align-items:start}
-    @media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
-
-    .phone-card{
-      display:flex;align-items:center;gap:16px;flex-wrap:wrap;
-      background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
-      padding:18px 20px;margin-bottom:14px;
-      transition:border-color .3s ease,transform .3s ease;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(30px, 5vw, 56px);
+      align-items: start
     }
-    .phone-card:hover{border-color:rgba(227,176,75,.5);transform:translateX(4px)}
-    .phone-icon{width:46px;height:46px;flex:none;border-radius:12px;background:rgba(227,176,75,.12);display:grid;place-items:center;color:var(--gold)}
-    .phone-icon svg{width:22px;height:22px}
-    .phone-card h3{font-size:1.05rem;font-weight:700;letter-spacing:.03em}
-    .phone-card p{font-size:.78rem;color:var(--muted)}
-    .phone-actions{margin-left:auto;display:flex;gap:8px}
-    .chip{font-size:.78rem;font-weight:700;padding:.45rem 1rem;border-radius:999px;border:1px solid var(--line);transition:.25s ease}
-    .chip:hover{border-color:var(--gold);color:var(--gold)}
-    .chip-gold{background:var(--gold-grad);color:#171004;border-color:transparent}
-    .chip-gold:hover{color:#171004;filter:brightness(1.08)}
 
-    .info-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-    .info-chip{display:inline-flex;align-items:center;gap:9px;font-size:.82rem;color:var(--muted);border:1px dashed var(--line);border-radius:999px;padding:.5rem 1rem}
-    .info-chip svg{width:16px;height:16px;color:var(--gold)}
-
-    .form-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(24px,4vw,36px)}
-    .form-card h3{font-size:1.2rem;font-weight:700;margin-bottom:6px}
-    .form-card > p{font-size:.86rem;color:var(--muted);margin-bottom:22px}
-    .field{margin-bottom:16px}
-    .field label{display:block;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-    .field input,.field select,.field textarea{
-      width:100%;background:#0d0d10;border:1px solid var(--line);border-radius:12px;
-      color:var(--text);font-family:inherit;font-size:.92rem;padding:.8rem 1rem;
-      transition:border-color .25s ease,box-shadow .25s ease;
+    @media (max-width:860px) {
+      .contact-grid {
+        grid-template-columns: 1fr
+      }
     }
-    .field textarea{resize:vertical;min-height:96px}
-    .field :is(input,select,textarea):focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(227,176,75,.15)}
-    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media (max-width:540px){.field-row{grid-template-columns:1fr}}
-    .form-note{font-size:.76rem;color:var(--muted);margin-top:14px;display:flex;align-items:center;gap:8px}
-    .form-note svg{width:14px;height:14px;color:var(--gold);flex:none}
+
+    .phone-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      transition: border-color .3s ease, transform .3s ease;
+    }
+
+    .phone-card:hover {
+      border-color: rgba(227, 176, 75, .5);
+      transform: translateX(4px)
+    }
+
+    .phone-icon {
+      width: 46px;
+      height: 46px;
+      flex: none;
+      border-radius: 12px;
+      background: rgba(227, 176, 75, .12);
+      display: grid;
+      place-items: center;
+      color: var(--gold)
+    }
+
+    .phone-icon svg {
+      width: 22px;
+      height: 22px
+    }
+
+    .phone-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: .03em
+    }
+
+    .phone-card p {
+      font-size: .78rem;
+      color: var(--muted)
+    }
+
+    .phone-actions {
+      margin-left: auto;
+      display: flex;
+      gap: 8px
+    }
+
+    .chip {
+      font-size: .78rem;
+      font-weight: 700;
+      padding: .45rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      transition: .25s ease
+    }
+
+    .chip:hover {
+      border-color: var(--gold);
+      color: var(--gold)
+    }
+
+    .chip-gold {
+      background: var(--gold-grad);
+      color: #171004;
+      border-color: transparent
+    }
+
+    .chip-gold:hover {
+      color: #171004;
+      filter: brightness(1.08)
+    }
+
+    .info-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px
+    }
+
+    .info-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: .82rem;
+      color: var(--muted);
+      border: 1px dashed var(--line);
+      border-radius: 999px;
+      padding: .5rem 1rem
+    }
+
+    .info-chip svg {
+      width: 16px;
+      height: 16px;
+      color: var(--gold)
+    }
+
+    .form-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 36px)
+    }
+
+    .form-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 6px
+    }
+
+    .form-card>p {
+      font-size: .86rem;
+      color: var(--muted);
+      margin-bottom: 22px
+    }
+
+    .field {
+      margin-bottom: 16px
+    }
+
+    .field label {
+      display: block;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 7px
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      background: #0d0d10;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: .92rem;
+      padding: .8rem 1rem;
+      transition: border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 96px
+    }
+
+    .field :is(input, select, textarea):focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(227, 176, 75, .15)
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px
+    }
+
+    @media (max-width:540px) {
+      .field-row {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .form-note {
+      font-size: .76rem;
+      color: var(--muted);
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .form-note svg {
+      width: 14px;
+      height: 14px;
+      color: var(--gold);
+      flex: none
+    }
 
     /* ---------- Footer ---------- */
-    footer{border-top:1px solid var(--line);background:#08080a;padding:56px 0 0}
-    .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1.2fr;gap:36px;padding-bottom:44px}
-    .foot-brand p{color:var(--muted);font-size:.86rem;margin-top:12px;max-width:300px}
-    footer h4{font-size:.78rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-    .foot-links li{margin-bottom:10px}
-    .foot-links a{color:var(--muted);font-size:.88rem;transition:color .25s ease}
-    .foot-links a:hover{color:var(--gold)}
-    .foot-contact li{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:.88rem;margin-bottom:12px}
-    .foot-contact svg{width:16px;height:16px;color:var(--gold);flex:none}
-    .foot-contact a:hover{color:var(--gold)}
-    .foot-bottom{border-top:1px solid var(--line);padding:20px 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.78rem;color:#7a776f}
-    @media (max-width:760px){.foot-grid{grid-template-columns:1fr}}
+    footer {
+      border-top: 1px solid var(--line);
+      background: #08080a;
+      padding: 56px 0 0
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1.2fr;
+      gap: 36px;
+      padding-bottom: 44px
+    }
+
+    .foot-brand p {
+      color: var(--muted);
+      font-size: .86rem;
+      margin-top: 12px;
+      max-width: 300px
+    }
+
+    footer h4 {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px
+    }
+
+    .foot-links li {
+      margin-bottom: 10px
+    }
+
+    .foot-links a {
+      color: var(--muted);
+      font-size: .88rem;
+      transition: color .25s ease
+    }
+
+    .foot-links a:hover {
+      color: var(--gold)
+    }
+
+    .foot-contact li {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--muted);
+      font-size: .88rem;
+      margin-bottom: 12px
+    }
+
+    .foot-contact svg {
+      width: 16px;
+      height: 16px;
+      color: var(--gold);
+      flex: none
+    }
+
+    .foot-contact a:hover {
+      color: var(--gold)
+    }
+
+    .foot-bottom {
+      border-top: 1px solid var(--line);
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: .78rem;
+      color: #7a776f
+    }
+
+    @media (max-width:760px) {
+      .foot-grid {
+        grid-template-columns: 1fr
+      }
+    }
 
     /* ---------- Floating WhatsApp ---------- */
-    .fab{
-      position:fixed;right:22px;bottom:22px;z-index:90;
-      width:58px;height:58px;border-radius:50%;
-      background:var(--gold-grad);display:grid;place-items:center;color:#171004;
-      box-shadow:0 12px 30px rgba(227,176,75,.35);
-      transition:transform .25s ease;
+    .fab {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 90;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--gold-grad);
+      display: grid;
+      place-items: center;
+      color: #171004;
+      box-shadow: 0 12px 30px rgba(227, 176, 75, .35);
+      transition: transform .25s ease;
     }
-    .fab:hover{transform:scale(1.08)}
-    .fab svg{width:28px;height:28px}
-    .fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid rgba(227,176,75,.6);animation:pulse 2.2s ease-out infinite}
-    @keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+    .fab:hover {
+      transform: scale(1.08)
+    }
+
+    .fab svg {
+      width: 28px;
+      height: 28px
+    }
+
+    .fab::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid rgba(227, 176, 75, .6);
+      animation: pulse 2.2s ease-out infinite
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: .8
+      }
+
+      100% {
+        transform: scale(1.7);
+        opacity: 0
+      }
+    }
 
     /* ---------- Reveal animations ---------- */
-    .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-    .js .reveal.in{opacity:1;transform:none}
-    @media (prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}
-      *,*::before,*::after{animation:none!important;transition:none!important}
-      .js .reveal{opacity:1;transform:none}
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .js .reveal.in {
+      opacity: 1;
+      transform: none
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important
+      }
+
+      .js .reveal {
+        opacity: 1;
+        transform: none
+      }
     }
   </style>
 </head>
@@ -320,34 +1168,43 @@
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
       <symbol id="car-sedan" viewBox="0 0 420 200">
-        <path d="M44 136 L86 136 A26 26 0 0 1 138 136 L286 136 A26 26 0 0 1 338 136 L366 136 Q378 136 377 126 Q374 113 342 108 L296 102 Q268 74 224 72 L176 72 Q128 76 98 106 L54 114 Q37 119 38 130 Q39 136 44 136 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M112 100 Q130 80 168 78 L218 78 L218 100 Z" fill="currentColor" opacity=".18"/>
-        <path d="M230 78 L246 78 Q266 82 282 100 L230 100 Z" fill="currentColor" opacity=".12"/>
-        <circle cx="112" cy="136" r="19" fill="none" stroke="currentColor" stroke-width="4"/>
-        <circle cx="112" cy="136" r="7" fill="currentColor"/>
-        <circle cx="312" cy="136" r="19" fill="none" stroke="currentColor" stroke-width="4"/>
-        <circle cx="312" cy="136" r="7" fill="currentColor"/>
-        <line x1="16" y1="170" x2="404" y2="170" stroke="currentColor" stroke-width="2" stroke-dasharray="1 11" stroke-linecap="round" opacity=".45"/>
+        <path
+          d="M44 136 L86 136 A26 26 0 0 1 138 136 L286 136 A26 26 0 0 1 338 136 L366 136 Q378 136 377 126 Q374 113 342 108 L296 102 Q268 74 224 72 L176 72 Q128 76 98 106 L54 114 Q37 119 38 130 Q39 136 44 136 Z"
+          fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" />
+        <path d="M112 100 Q130 80 168 78 L218 78 L218 100 Z" fill="currentColor" opacity=".18" />
+        <path d="M230 78 L246 78 Q266 82 282 100 L230 100 Z" fill="currentColor" opacity=".12" />
+        <circle cx="112" cy="136" r="19" fill="none" stroke="currentColor" stroke-width="4" />
+        <circle cx="112" cy="136" r="7" fill="currentColor" />
+        <circle cx="312" cy="136" r="19" fill="none" stroke="currentColor" stroke-width="4" />
+        <circle cx="312" cy="136" r="7" fill="currentColor" />
+        <line x1="16" y1="170" x2="404" y2="170" stroke="currentColor" stroke-width="2" stroke-dasharray="1 11"
+          stroke-linecap="round" opacity=".45" />
       </symbol>
       <symbol id="car-suv" viewBox="0 0 420 200">
-        <path d="M44 136 L86 136 A26 26 0 0 1 138 136 L286 136 A26 26 0 0 1 338 136 L364 136 Q376 136 375 126 Q373 113 348 109 L298 103 L291 60 Q289 50 277 50 L124 52 Q112 52 107 63 L95 105 L58 111 Q40 115 39 127 Q40 136 44 136 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M110 66 L162 64 L162 98 L102 100 Z" fill="currentColor" opacity=".18"/>
-        <path d="M172 64 L268 62 L280 98 L172 98 Z" fill="currentColor" opacity=".12"/>
-        <circle cx="112" cy="136" r="19" fill="none" stroke="currentColor" stroke-width="4"/>
-        <circle cx="112" cy="136" r="7" fill="currentColor"/>
-        <circle cx="312" cy="136" r="19" fill="none" stroke="currentColor" stroke-width="4"/>
-        <circle cx="312" cy="136" r="7" fill="currentColor"/>
-        <line x1="16" y1="170" x2="404" y2="170" stroke="currentColor" stroke-width="2" stroke-dasharray="1 11" stroke-linecap="round" opacity=".45"/>
+        <path
+          d="M44 136 L86 136 A26 26 0 0 1 138 136 L286 136 A26 26 0 0 1 338 136 L364 136 Q376 136 375 126 Q373 113 348 109 L298 103 L291 60 Q289 50 277 50 L124 52 Q112 52 107 63 L95 105 L58 111 Q40 115 39 127 Q40 136 44 136 Z"
+          fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" />
+        <path d="M110 66 L162 64 L162 98 L102 100 Z" fill="currentColor" opacity=".18" />
+        <path d="M172 64 L268 62 L280 98 L172 98 Z" fill="currentColor" opacity=".12" />
+        <circle cx="112" cy="136" r="19" fill="none" stroke="currentColor" stroke-width="4" />
+        <circle cx="112" cy="136" r="7" fill="currentColor" />
+        <circle cx="312" cy="136" r="19" fill="none" stroke="currentColor" stroke-width="4" />
+        <circle cx="312" cy="136" r="7" fill="currentColor" />
+        <line x1="16" y1="170" x2="404" y2="170" stroke="currentColor" stroke-width="2" stroke-dasharray="1 11"
+          stroke-linecap="round" opacity=".45" />
       </symbol>
       <symbol id="car-sports" viewBox="0 0 420 200">
-        <path d="M48 138 L86 138 A26 26 0 0 1 138 138 L284 138 A26 26 0 0 1 336 138 L360 138 Q374 138 373 130 Q371 120 340 116 L292 110 Q268 88 224 84 L188 84 Q146 88 118 110 L64 118 Q42 122 41 130 Q41 138 48 138 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M132 106 Q150 92 186 90 L218 90 L218 106 Z" fill="currentColor" opacity=".18"/>
-        <path d="M230 90 L246 90 Q262 94 274 107 L230 107 Z" fill="currentColor" opacity=".12"/>
-        <circle cx="112" cy="138" r="19" fill="none" stroke="currentColor" stroke-width="4"/>
-        <circle cx="112" cy="138" r="7" fill="currentColor"/>
-        <circle cx="310" cy="138" r="19" fill="none" stroke="currentColor" stroke-width="4"/>
-        <circle cx="310" cy="138" r="7" fill="currentColor"/>
-        <line x1="16" y1="172" x2="404" y2="172" stroke="currentColor" stroke-width="2" stroke-dasharray="1 11" stroke-linecap="round" opacity=".45"/>
+        <path
+          d="M48 138 L86 138 A26 26 0 0 1 138 138 L284 138 A26 26 0 0 1 336 138 L360 138 Q374 138 373 130 Q371 120 340 116 L292 110 Q268 88 224 84 L188 84 Q146 88 118 110 L64 118 Q42 122 41 130 Q41 138 48 138 Z"
+          fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" />
+        <path d="M132 106 Q150 92 186 90 L218 90 L218 106 Z" fill="currentColor" opacity=".18" />
+        <path d="M230 90 L246 90 Q262 94 274 107 L230 107 Z" fill="currentColor" opacity=".12" />
+        <circle cx="112" cy="138" r="19" fill="none" stroke="currentColor" stroke-width="4" />
+        <circle cx="112" cy="138" r="7" fill="currentColor" />
+        <circle cx="310" cy="138" r="19" fill="none" stroke="currentColor" stroke-width="4" />
+        <circle cx="310" cy="138" r="7" fill="currentColor" />
+        <line x1="16" y1="172" x2="404" y2="172" stroke="currentColor" stroke-width="2" stroke-dasharray="1 11"
+          stroke-linecap="round" opacity=".45" />
       </symbol>
     </defs>
   </svg>
@@ -365,7 +1222,11 @@
         <a href="#process">How It Works</a>
         <a href="#contact">Contact</a>
         <a href="tel:+254707225073" class="btn btn-gold btn-sm nav-cta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
           Call Now
         </a>
       </nav>
@@ -381,28 +1242,47 @@
       <div class="reveal in">
         <span class="eyebrow">Premium Car Dealership · Kenya</span>
         <h1><span class="gold-text">AUTO</span> <span class="silver-text">FUSION</span></h1>
-        <div class="tagline"><span class="tline"></span><span>Drive Your Dreams</span><span class="tline r"></span></div>
-        <p class="lead">Your trusted partner for quality vehicles in Kenya. Hand-picked imports and locally used cars, thorough inspections and honest pricing — the car you want, without the runaround.</p>
+        <div class="tagline"><span class="tline"></span><span>Drive Your Dreams</span><span class="tline r"></span>
+        </div>
+        <p class="lead">Your trusted partner for quality vehicles in Kenya. Hand-picked imports and locally used cars,
+          thorough inspections and honest pricing — the car you want, without the runaround.</p>
         <div class="hero-ctas">
           <a href="#stock" class="btn btn-gold">Browse Our Stock</a>
-          <a href="https://wa.me/254707225073?text=Hi%20AutoFusion!%20I%27m%20interested%20in%20buying%20a%20car." target="_blank" rel="noopener" class="btn btn-ghost">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <a href="https://wa.me/254707225073?text=Hi%20AutoFusion!%20I%27m%20interested%20in%20buying%20a%20car."
+            target="_blank" rel="noopener" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
             Chat on WhatsApp
           </a>
         </div>
 
         <!-- ✏️ EDIT: update these numbers to match your business -->
         <div class="stats">
-          <div class="stat"><div class="stat-num gold-text" data-count="300" data-suffix="+">0</div><div class="stat-label">Cars Sold</div></div>
-          <div class="stat"><div class="stat-num gold-text" data-count="8" data-suffix="+">0</div><div class="stat-label">Years Experience</div></div>
-          <div class="stat"><div class="stat-num gold-text" data-count="500" data-suffix="+">0</div><div class="stat-label">Happy Clients</div></div>
+          <div class="stat">
+            <div class="stat-num gold-text" data-count="300" data-suffix="+">0</div>
+            <div class="stat-label">Cars Sold</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num gold-text" data-count="8" data-suffix="+">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num gold-text" data-count="500" data-suffix="+">0</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
         </div>
       </div>
 
       <div class="hero-art reveal in">
         <div class="art-glow"></div>
-        <svg class="art-back" viewBox="0 0 420 200" aria-hidden="true"><use href="#car-sedan"/></svg>
-        <svg class="art-car" viewBox="0 0 420 200" role="img" aria-label="AutoFusion — quality cars"><use href="#car-sports"/></svg>
+        <svg class="art-back" viewBox="0 0 420 200" aria-hidden="true">
+          <use href="#car-sedan" />
+        </svg>
+        <svg class="art-car" viewBox="0 0 420 200" role="img" aria-label="AutoFusion — quality cars">
+          <use href="#car-sports" />
+        </svg>
       </div>
     </div>
   </section>
@@ -411,8 +1291,12 @@
   <!-- ✏️ EDIT: swap in the brands you actually stock -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Toyota <b>·</b></span><span>Nissan <b>·</b></span><span>Mazda <b>·</b></span><span>Subaru <b>·</b></span><span>Mercedes-Benz <b>·</b></span><span>BMW <b>·</b></span><span>Volkswagen <b>·</b></span><span>Audi <b>·</b></span><span>Land Rover <b>·</b></span><span>Honda <b>·</b></span>
-      <span>Toyota <b>·</b></span><span>Nissan <b>·</b></span><span>Mazda <b>·</b></span><span>Subaru <b>·</b></span><span>Mercedes-Benz <b>·</b></span><span>BMW <b>·</b></span><span>Volkswagen <b>·</b></span><span>Audi <b>·</b></span><span>Land Rover <b>·</b></span><span>Honda <b>·</b></span>
+      <span>Toyota <b>·</b></span><span>Nissan <b>·</b></span><span>Mazda <b>·</b></span><span>Subaru
+        <b>·</b></span><span>Mercedes-Benz <b>·</b></span><span>BMW <b>·</b></span><span>Volkswagen
+        <b>·</b></span><span>Audi <b>·</b></span><span>Land Rover <b>·</b></span><span>Honda <b>·</b></span>
+      <span>Toyota <b>·</b></span><span>Nissan <b>·</b></span><span>Mazda <b>·</b></span><span>Subaru
+        <b>·</b></span><span>Mercedes-Benz <b>·</b></span><span>BMW <b>·</b></span><span>Volkswagen
+        <b>·</b></span><span>Audi <b>·</b></span><span>Land Rover <b>·</b></span><span>Honda <b>·</b></span>
     </div>
   </div>
 
@@ -424,34 +1308,67 @@
         <h2 style="font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:18px">
           Built on trust.<br /><span class="gold-text">Driven by passion.</span>
         </h2>
-        <p>AutoFusion is a Kenyan car dealership founded on a simple idea: buying a car should be exciting, not exhausting. We source well-maintained locally used vehicles and direct imports — and every single one passes a strict multi-point inspection before it reaches our yard.</p>
-        <p>Whether you're after your first hatchback, a family SUV, or something with a bit more presence, our team walks with you from first enquiry to keys-in-hand.</p>
+        <p>AutoFusion is a Kenyan car dealership founded on a simple idea: buying a car should be exciting, not
+          exhausting. We source well-maintained locally used vehicles and direct imports — and every single one passes a
+          strict multi-point inspection before it reaches our yard.</p>
+        <p>Whether you're after your first hatchback, a family SUV, or something with a bit more presence, our team
+          walks with you from first enquiry to keys-in-hand.</p>
         <ul class="tick-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Every vehicle fully inspected</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Honest, transparent pricing — no hidden costs</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Import &amp; trade-in assistance</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> We handle the paperwork for you</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5" />
+            </svg> Every vehicle fully inspected</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5" />
+            </svg> Honest, transparent pricing — no hidden costs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5" />
+            </svg> Import &amp; trade-in assistance</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5" />
+            </svg> We handle the paperwork for you</li>
         </ul>
       </div>
 
       <div class="why-grid reveal" data-stagger>
         <div class="why-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5.5-3.3 9-8 10.5C7.3 20 4 16.5 4 11V6z"/><path d="M8.5 11.5 11 14l4.5-5"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 3l8 3v5c0 5.5-3.3 9-8 10.5C7.3 20 4 16.5 4 11V6z" />
+            <path d="M8.5 11.5 11 14l4.5-5" />
+          </svg>
           <h3>Quality You Can Trust</h3>
           <p>Cars are vetted, inspected and history-checked before we put our name on them.</p>
         </div>
         <div class="why-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z" />
+            <circle cx="7.5" cy="7.5" r="1.2" />
+          </svg>
           <h3>Fair, Clear Pricing</h3>
           <p>What we quote is what you pay. No games, no surprise charges at the finish line.</p>
         </div>
         <div class="why-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8H7a4 4 0 0 0-4 4"/><path d="M4 16h13a4 4 0 0 0 4-4"/><path d="m17 5 3 3-3 3"/><path d="m7 19-3-3 3-3"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M20 8H7a4 4 0 0 0-4 4" />
+            <path d="M4 16h13a4 4 0 0 0 4-4" />
+            <path d="m17 5 3 3-3 3" />
+            <path d="m7 19-3-3 3-3" />
+          </svg>
           <h3>Trade-Ins Welcome</h3>
           <p>Upgrade with ease — bring your current car and we'll value it fairly on the spot.</p>
         </div>
         <div class="why-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+          </svg>
           <h3>After-Sale Support</h3>
           <p>We don't disappear after the sale. Advice, servicing pointers and support stay on tap.</p>
         </div>
@@ -465,48 +1382,85 @@
       <div class="sec-head center reveal">
         <span class="eyebrow">Our Stock</span>
         <h2>Find your next ride</h2>
-        <p>Our inventory moves fast and changes weekly. Browse the categories below, then reach out for the latest arrivals, photos and pricing.</p>
+        <p>Our inventory moves fast and changes weekly. Browse the categories below, then reach out for the latest
+          arrivals, photos and pricing.</p>
       </div>
 
       <div class="cars-grid" data-stagger>
         <article class="car-card reveal">
-          <div class="car-art"><svg class="art-gold" viewBox="0 0 420 200" role="img" aria-label="SUV illustration"><use href="#car-suv"/></svg></div>
+          <div class="car-art"><svg class="art-gold" viewBox="0 0 420 200" role="img" aria-label="SUV illustration">
+              <use href="#car-suv" />
+            </svg></div>
           <div class="card-body">
             <h3>SUVs &amp; 7-Seaters</h3>
             <p>Prados, Harriers, X-Trails and more — space, comfort and capability for the whole family.</p>
-            <a class="card-link" target="_blank" rel="noopener" href="https://wa.me/254707225073?text=Hi%20AutoFusion!%20Do%20you%20have%20any%20SUVs%20or%207-seaters%20in%20stock%20right%20now%3F">Ask on WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+            <a class="card-link" target="_blank" rel="noopener"
+              href="https://wa.me/254707225073?text=Hi%20AutoFusion!%20Do%20you%20have%20any%20SUVs%20or%207-seaters%20in%20stock%20right%20now%3F">Ask
+              on WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg></a>
           </div>
         </article>
 
         <article class="car-card reveal">
-          <div class="car-art"><svg class="art-silver" viewBox="0 0 420 200" role="img" aria-label="Sedan illustration"><use href="#car-sedan"/></svg></div>
+          <div class="car-art"><svg class="art-silver" viewBox="0 0 420 200" role="img" aria-label="Sedan illustration">
+              <use href="#car-sedan" />
+            </svg></div>
           <div class="card-body">
             <h3>Sedans &amp; Hatchbacks</h3>
             <p>Fuel-efficient daily drivers — Axio, Vitz, Demio and friends. Reliable, clean and ready to go.</p>
-            <a class="card-link" target="_blank" rel="noopener" href="https://wa.me/254707225073?text=Hi%20AutoFusion!%20Do%20you%20have%20any%20sedans%20or%20hatchbacks%20in%20stock%20right%20now%3F">Ask on WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+            <a class="card-link" target="_blank" rel="noopener"
+              href="https://wa.me/254707225073?text=Hi%20AutoFusion!%20Do%20you%20have%20any%20sedans%20or%20hatchbacks%20in%20stock%20right%20now%3F">Ask
+              on WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg></a>
           </div>
         </article>
 
         <article class="car-card reveal">
-          <div class="car-art"><svg class="art-gold" viewBox="0 0 420 200" role="img" aria-label="Luxury car illustration"><use href="#car-sedan"/></svg></div>
+          <div class="car-art"><svg class="art-gold" viewBox="0 0 420 200" role="img"
+              aria-label="Luxury car illustration">
+              <use href="#car-sedan" />
+            </svg></div>
           <div class="card-body">
             <h3>Luxury &amp; Executive</h3>
             <p>German engineering and executive comfort — E-Class, 5 Series, X5 and others on request.</p>
-            <a class="card-link" target="_blank" rel="noopener" href="https://wa.me/254707225073?text=Hi%20AutoFusion!%20I%27m%20interested%20in%20a%20luxury%20car.%20What%20do%20you%20currently%20have%3F">Ask on WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+            <a class="card-link" target="_blank" rel="noopener"
+              href="https://wa.me/254707225073?text=Hi%20AutoFusion!%20I%27m%20interested%20in%20a%20luxury%20car.%20What%20do%20you%20currently%20have%3F">Ask
+              on WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg></a>
           </div>
         </article>
 
         <article class="car-card reveal">
-          <div class="car-art"><svg class="art-gold" viewBox="0 0 420 200" role="img" aria-label="Sports car illustration"><use href="#car-sports"/></svg></div>
+          <div class="car-art"><svg class="art-gold" viewBox="0 0 420 200" role="img"
+              aria-label="Sports car illustration">
+              <use href="#car-sports" />
+            </svg></div>
           <div class="card-body">
             <h3>Sports &amp; Performance</h3>
             <p>For those who drive for the fun of it — Subarus, M-Sport BMWs and other head-turners.</p>
-            <a class="card-link" target="_blank" rel="noopener" href="https://wa.me/254707225073?text=Hi%20AutoFusion!%20I%27m%20looking%20for%20something%20sporty.%20What%27s%20available%3F">Ask on WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+            <a class="card-link" target="_blank" rel="noopener"
+              href="https://wa.me/254707225073?text=Hi%20AutoFusion!%20I%27m%20looking%20for%20something%20sporty.%20What%27s%20available%3F">Ask
+              on WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg></a>
           </div>
         </article>
       </div>
 
-      <p class="stock-note reveal">Looking for something specific? <a href="https://wa.me/254707225073?text=Hi%20AutoFusion!%20I%27m%20looking%20for%20a%20specific%20car.%20Can%20you%20help%20me%20find%20it%3F" target="_blank" rel="noopener">Tell us what you need</a> — we also source cars on order.</p>
+      <p class="stock-note reveal">Looking for something specific? <a
+          href="https://wa.me/254707225073?text=Hi%20AutoFusion!%20I%27m%20looking%20for%20a%20specific%20car.%20Can%20you%20help%20me%20find%20it%3F"
+          target="_blank" rel="noopener">Tell us what you need</a> — we also source cars on order.</p>
     </div>
   </section>
 
@@ -549,7 +1503,11 @@
       <div class="contact-grid">
         <div class="reveal">
           <div class="phone-card">
-            <div class="phone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div class="phone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg></div>
             <div>
               <h3>+254 707 225 073</h3>
               <p>Sales &amp; enquiries</p>
@@ -561,7 +1519,11 @@
           </div>
 
           <div class="phone-card">
-            <div class="phone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div class="phone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg></div>
             <div>
               <h3>+254 713 488 354</h3>
               <p>Sales &amp; bookings</p>
@@ -573,7 +1535,11 @@
           </div>
 
           <div class="phone-card">
-            <div class="phone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div class="phone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg></div>
             <div>
               <h3>+254 742 786 106</h3>
               <p>Trade-ins &amp; support</p>
@@ -586,8 +1552,16 @@
 
           <!-- ✏️ EDIT: update location & hours to match your yard -->
           <div class="info-row">
-            <span class="info-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Nairobi, Kenya</span>
-            <span class="info-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> Mon–Sat: 8am–6pm · Sun: Closed</span>
+            <span class="info-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg> Nairobi, Kenya</span>
+            <span class="info-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3.5 2" />
+              </svg> Mon–Sat: 8am–6pm · Sun: Closed</span>
           </div>
         </div>
 
@@ -602,7 +1576,8 @@
                 <input id="fName" name="name" type="text" placeholder="Jane Doe" required />
               </div>
               <div class="field">
-                <label for="fPhone">Your Phone <span style="text-transform:none;font-weight:500">(optional)</span></label>
+                <label for="fPhone">Your Phone <span
+                    style="text-transform:none;font-weight:500">(optional)</span></label>
                 <input id="fPhone" name="phone" type="tel" placeholder="07XX XXX XXX" />
               </div>
             </div>
@@ -619,13 +1594,21 @@
             </div>
             <div class="field">
               <label for="fMsg">Message</label>
-              <textarea id="fMsg" name="message" placeholder="e.g. Looking for a Toyota Harrier below 1.5M..."></textarea>
+              <textarea id="fMsg" name="message"
+                placeholder="e.g. Looking for a Toyota Harrier below 1.5M..."></textarea>
             </div>
             <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+              </svg>
               Send via WhatsApp
             </button>
-            <p class="form-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> No data is stored anywhere — your message goes straight to our WhatsApp.</p>
+            <p class="form-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg> No data is stored anywhere — your message goes straight to our WhatsApp.</p>
           </form>
         </div>
       </div>
@@ -640,7 +1623,8 @@
           <a href="#home" class="brand" style="font-size:1.4rem">
             <span class="gold-text">AUTO</span><span class="silver-text">FUSION</span>
           </a>
-          <p>Quality vehicles, honest dealing and full support from first enquiry to keys-in-hand. Drive your dreams.</p>
+          <p>Quality vehicles, honest dealing and full support from first enquiry to keys-in-hand. Drive your dreams.
+          </p>
         </div>
         <div>
           <h4>Quick Links</h4>
@@ -658,7 +1642,11 @@
             <li><a href="tel:+254707225073">+254 707 225 073</a></li>
             <li><a href="tel:+254713488354">+254 713 488 354</a></li>
             <li><a href="tel:+254742786106">+254 742 786 106</a></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Nairobi, Kenya</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg> Nairobi, Kenya</li>
           </ul>
         </div>
       </div>
@@ -670,22 +1658,26 @@
   </footer>
 
   <!-- Floating WhatsApp button -->
-  <a class="fab" href="https://wa.me/254707225073?text=Hi%20AutoFusion!" target="_blank" rel="noopener" aria-label="Chat with AutoFusion on WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <a class="fab" href="https://wa.me/254707225073?text=Hi%20AutoFusion!" target="_blank" rel="noopener"
+    aria-label="Chat with AutoFusion on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+    </svg>
   </a>
 
   <script>
     // ----- Sticky nav background -----
     const nav = document.getElementById('siteNav');
-    addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), {passive:true});
+    addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
 
     // ----- Mobile menu -----
     const toggle = document.getElementById('navToggle');
-    const links  = document.getElementById('navLinks');
-    function closeMenu(){
+    const links = document.getElementById('navLinks');
+    function closeMenu() {
       links.classList.remove('open');
       toggle.classList.remove('open');
-      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('menu-open');
     }
     toggle.addEventListener('click', () => {
@@ -698,11 +1690,11 @@
 
     // ----- Scroll-reveal animations -----
     const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:.14});
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .14 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     document.querySelectorAll('[data-stagger]').forEach(group => {
-      [...group.children].forEach((c,i) => c.style.transitionDelay = (i*90)+'ms');
+      [...group.children].forEach((c, i) => c.style.transitionDelay = (i * 90) + 'ms');
     });
 
     // ----- Animated counters -----
@@ -712,13 +1704,13 @@
         co.unobserve(e.target);
         const el = e.target, target = +el.dataset.count, suffix = el.dataset.suffix || '';
         const t0 = performance.now(), dur = 1400;
-        (function step(t){
-          const p = Math.min((t - t0)/dur, 1);
-          el.textContent = Math.round(target * (1 - Math.pow(1-p, 3))) + suffix;
+        (function step(t) {
+          const p = Math.min((t - t0) / dur, 1);
+          el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
           if (p < 1) requestAnimationFrame(step);
         })(t0);
       });
-    }, {threshold:.5});
+    }, { threshold: .5 });
     document.querySelectorAll('[data-count]').forEach(el => co.observe(el));
 
     // ----- Highlight active nav link while scrolling -----
@@ -729,19 +1721,19 @@
         if (e.isIntersecting) navAnchors.forEach(a =>
           a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
       });
-    }, {rootMargin:'-40% 0px -55% 0px'});
+    }, { rootMargin: '-40% 0px -55% 0px' });
     sections.forEach(s => so.observe(s));
 
     // ----- Contact form → opens WhatsApp (no backend needed) -----
-    document.getElementById('waForm').addEventListener('submit', function(e){
+    document.getElementById('waForm').addEventListener('submit', function (e) {
       e.preventDefault();
       const d = new FormData(this);
       const msg = [
-        'Hello AutoFusion! 👋','',
-        'Name: '        + (d.get('name') || '-'),
-        'Phone: '       + (d.get('phone') || '-'),
+        'Hello AutoFusion! 👋', '',
+        'Name: ' + (d.get('name') || '-'),
+        'Phone: ' + (d.get('phone') || '-'),
         'Interested in: ' + (d.get('interest') || '-'),
-        'Message: '     + (d.get('message') || 'I would like to know more about the cars you have in stock.')
+        'Message: ' + (d.get('message') || 'I would like to know more about the cars you have in stock.')
       ].join('\n');
       window.open('https://wa.me/254707225073?text=' + encodeURIComponent(msg), '_blank', 'noopener');
     });
@@ -750,4 +1742,5 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
